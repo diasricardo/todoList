@@ -21,7 +21,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, 'src', 'public')));
 
 // Define a pasta de views
-app.set("views", path.join(__dirname, "src", "views"));
+app.set("views", path.join(__dirname, "views"));
 
 // Define o motor de visualização como EJS
 app.set("view engine", "ejs");
