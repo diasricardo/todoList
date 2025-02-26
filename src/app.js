@@ -15,7 +15,9 @@ const __dirname = path.dirname(__filename)
 app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-app.use(express.static("src/public"));
+// app.use(express.static("src/public"));
+app.use(express.static(path.join(__dirname, 'src', 'public')));
+
 app.set("view engine", "ejs");
 // app.set(express.static("views", "./src/views"));
 app.use(express.static(path.join(__dirname, 'src', 'views')));
