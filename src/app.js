@@ -19,6 +19,7 @@ app.use(express.urlencoded({ extended: true }));
 
 // Serve arquivos estáticos da pasta 'public'
 // app.use(express.static(path.join(__dirname, 'src', 'public')));
+console.log('Diretório atual:', __dirname);
 app.use(express.static(path.join(__dirname, 'src', 'public')));
 
 
