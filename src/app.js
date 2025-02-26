@@ -17,11 +17,13 @@ app.set("view engine", "ejs");
 app.set(express.static("views", "./src/views"));
 app.use(tarefaRoutes);
 
-// Define a porta do servidor
-const porta = 3000;
-app.listen(porta, () => {
-    console.log(`Servidor rodando em: http://localhost:${porta}`);
-});
+export default app;
+
+// // Define a porta do servidor
+// const porta = 3000;
+// app.listen(porta, () => {
+//     console.log(`Servidor rodando em: http://localhost:${porta}`);
+// });
 
 // import express from "express";
 // import dotenv from "dotenv";
