@@ -6,7 +6,7 @@ import { readFileSync } from "fs";
 dotenv.config();
 
 // Carrega as credenciais do Firebase a partir do arquivo JSON
-const serviceAccount = JSON.parse(readFileSync(process.env.FIREBASE_CREDENTIALS, "utf8"));
+const serviceAccount = JSON.parse(readFileSync(process.env.FIREBASE_SERVICE_ACCOUNT_KEY));
 
 // Inicializa o Firebase Admin SDK com as credenciais carregadas
 admin.initializeApp({
