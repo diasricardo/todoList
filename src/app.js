@@ -4,27 +4,30 @@ import cors from "cors";
 import tarefaRoutes from "./routes/tarefaRoutes.js";
 import { fileURLToPath } from "url";
 import path from "path";
+
 // Carrega as variáveis de ambiente do arquivo .env
 dotenv.config();
 
 const app = express();
-const __filename = fileURLToPath(import.meta.url)
-const __dirname = path.dirname(__filename)
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 // Habilita o CORS para permitir requisições de diferentes origens
 app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-// app.use(express.static("src/public"));
+
+// Serve arquivos estáticos da pasta 'public'
 app.use(express.static(path.join(__dirname, 'src', 'public')));
 
-// app.set("view engine", "ejs");
+// Define a pasta de views
 app.set("views", path.join(__dirname, "src", "views"));
-// app.set(express.static("views", "./src/views"));
-app.use(express.static(path.join(__dirname, 'src', 'views')));
+
+// Define o motor de visualização como EJS
+app.set("view engine", "ejs");
+
+// Define as rotas
 app.use(tarefaRoutes);
-
-
 
 // Define a porta do servidor
 const porta = 3000;
@@ -32,7 +35,8 @@ app.listen(porta, () => {
     console.log(`Servidor rodando em: http://localhost:${porta}`);
 });
 
-export default app
+export default app;
+
 
 // import express from "express";
 // import dotenv from "dotenv";
