@@ -2,12 +2,14 @@ import express from "express";
 import dotenv from "dotenv";
 import cors from "cors";
 import tarefaRoutes from "./routes/tarefaRoutes.js";
+import { fileURLToPath } from "url";
 import path from "path";
 // Carrega as variáveis de ambiente do arquivo .env
 dotenv.config();
 
 const app = express();
-
+const __filename = fileURLToPath(import.meta.url)
+const __dirname = path.dirname(__filename)
 
 // Habilita o CORS para permitir requisições de diferentes origens
 app.use(cors());
