@@ -30,10 +30,10 @@ app.set("view engine", "ejs");
 app.use(tarefaRoutes);
 
 // Define a porta do servidor
-const porta = 3000;
-app.listen(porta, () => {
-    console.log(`Servidor rodando em: http://localhost:${porta}`);
-});
+// const porta = 3000;
+// app.listen(porta, () => {
+//     console.log(`Servidor rodando em: http://localhost:${porta}`);
+// });
 
 export default app;
 
