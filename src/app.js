@@ -20,8 +20,8 @@ app.use(express.urlencoded({ extended: true }));
 // Serve arquivos estáticos da pasta 'public'
 app.use(express.static(path.join(__dirname, 'src', 'public')));
 
-// Define a pasta de views
-app.set("views", path.join(__dirname, "views"));
+// Define a pasta de views (certifique-se de que 'views' está diretamente dentro de 'src')
+app.set("views", path.join(__dirname, "src", "views")); // Corrigido para garantir que o caminho esteja correto
 
 // Define o motor de visualização como EJS
 app.set("view engine", "ejs");
@@ -36,6 +36,7 @@ app.listen(porta, () => {
 });
 
 export default app;
+
 
 
 // import express from "express";
