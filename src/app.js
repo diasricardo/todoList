@@ -17,7 +17,9 @@ app.set("view engine", "ejs");
 app.set(express.static("views", "./src/views"));
 app.use(tarefaRoutes);
 
-export default app;
+export default (req, res) => {
+    app(req, res);
+  };
 
 // // Define a porta do servidor
 // const porta = 3000;
