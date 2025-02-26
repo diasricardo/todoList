@@ -2,11 +2,12 @@ import express from "express";
 import dotenv from "dotenv";
 import cors from "cors";
 import tarefaRoutes from "./routes/tarefaRoutes.js";
-
+import path from "path";
 // Carrega as variáveis de ambiente do arquivo .env
 dotenv.config();
 
 const app = express();
+const path = require('path');
 
 // Habilita o CORS para permitir requisições de diferentes origens
 app.use(cors());
@@ -14,7 +15,8 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static("src/public"));
 app.set("view engine", "ejs");
-app.set(express.static("views", "./src/views"));
+// app.set(express.static("views", "./src/views"));
+app.use(express.static(path.join(__dirname, 'src', 'views')));
 app.use(tarefaRoutes);
 
 export default (req, res) => {
