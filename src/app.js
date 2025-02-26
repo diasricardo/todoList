@@ -7,7 +7,7 @@ import path from "path";
 dotenv.config();
 
 const app = express();
-const path = require('path');
+
 
 // Habilita o CORS para permitir requisições de diferentes origens
 app.use(cors());
